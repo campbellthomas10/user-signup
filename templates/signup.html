@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <style>
+                .error {
+                    color: red;
+                    font-size: 9pt;
+                }
+                h1 {
+                    text-align: center;
+                }
+                form {
+                    background-color: #eee;
+                    border-radius: 10pt;
+                    width: 400px;
+                    padding: 10px;
+                    margin: 10px auto;
+                }
+                body{
+                    font-family: Verdana, sans-seriff;
+                    background-color:steelblue;
+                }
+        </style>
+    <body>
+        <h1>Signup</h1>
+        <form action="/signup" method="POST">
+            <label>Username:
+                <input type="text" min=3 max=20 name="username" value='{{username}}' />
+                <span class="error">{{username_error}}</span>
+            </label>
+            <br />
+            
+
+            <label>Password:
+                <input type="password" min=3 max=20 name="password" />
+                <span class="error">{{password_error}}</span>
+            </label>
+            <br />
+
+            <label>Verify Password:
+                <input type="password" min=3 max=20 name="verified" />
+                <span class="error">{{verification_error}}</span>
+            </label>
+            <br />
+
+            <label>Email (Optional):
+                <input type="email" name="email" value='{{email}}' />
+                <span class="error">{{email_error}}</span>
+            </label>
+            <br />
+
+            <input type="submit" value="Signup" />
+        </form>
+    </body>
+{% endblock %}
