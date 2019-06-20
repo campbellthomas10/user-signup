@@ -83,7 +83,7 @@ def checks():
 @app.route('/signed-up')
 def signed_up():
     username = request.args.get('username')
-    return '<h1>Welcome, {0}!</h1>'.format(username)
+    return render_template('signed-in.html', username=username)
 
 
     
