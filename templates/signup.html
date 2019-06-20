@@ -8,48 +8,80 @@
                 }
                 h1 {
                     text-align: center;
+                    color: darkslateblue;
                 }
                 form {
-                    background-color: #eee;
+                    background-color: darkslateblue;
                     border-radius: 10pt;
-                    width: 400px;
+                    width: 90%;
                     padding: 10px;
                     margin: 10px auto;
                 }
                 body{
                     font-family: Verdana, sans-seriff;
-                    background-color:steelblue;
+                    background-color: darkslateblue;
+                    color: white;
                 }
+                .main {
+                    background-color: #eee;
+                    border-radius: 10pt;
+                    padding: 10px;
+                    width: 350px;
+                    margin: 0 auto;
+                }
+
         </style>
     <body>
-        <h1>Signup</h1>
+        <div class="main">
+
+        <h1>User Signup</h1>
         <form action="/signup" method="POST">
-            <label>Username:
-                <input type="text" min=3 max=20 name="username" value='{{username}}' />
-                <span class="error">{{username_error}}</span>
-            </label>
-            <br />
+
+            <table>
+                <tr>
+                    <td>
+                        <label for="username">Username:</label>
+                    </td>
+                    <td>
+                        <input type="text" min=3 max=20 name="username" value='{{username}}' />
+                        <span class="error">{{username_error}}</span>
+                    </td>
+                </tr>
             
+                <tr>
+                    <td>
+                        <label for="password">Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" min=3 max=20 name="password" />
+                        <span class="error">{{password_error}}</span>
+                    </td>
+                </tr>
 
-            <label>Password:
-                <input type="password" min=3 max=20 name="password" />
-                <span class="error">{{password_error}}</span>
-            </label>
-            <br />
+                <tr>
+                    <td>
+                        <label for="verified">Verify Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" min=3 max=20 name="verified" />
+                        <span class="error">{{verification_error}}</span>
+                    </td>
+                </tr>
 
-            <label>Verify Password:
-                <input type="password" min=3 max=20 name="verified" />
-                <span class="error">{{verification_error}}</span>
-            </label>
-            <br />
-
-            <label>Email (Optional):
-                <input type="email" name="email" value='{{email}}' />
-                <span class="error">{{email_error}}</span>
-            </label>
-            <br />
+                <tr>
+                    <td>
+                        <label for="email">Email (Optional):</label>
+                    </td>
+                    <td>
+                        <input type="email" name="email" value='{{email}}' />
+                        <span class="error">{{email_error}}</span>
+                    </td>
+                </tr>
+            </table>
 
             <input type="submit" value="Signup" />
         </form>
+
+    </div>
     </body>
 {% endblock %}
