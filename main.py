@@ -1,5 +1,6 @@
 from flask import Flask, request, redirect, render_template
 import os
+import cgi
 
 
 app = Flask(__name__)
@@ -83,7 +84,7 @@ def checks():
 @app.route('/signed-up')
 def signed_up():
     username = request.args.get('username')
-    return render_template('signed-in.html', username=username)
+    return render_template('signed-in.html', username=cgi.escape(username), title="Welcome!")
 
 
     
